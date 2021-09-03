@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PongController">
+   <left>
+      <GridPane prefHeight="750.0" prefWidth="200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#run" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: green;" text="RUN" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#reset" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: orange;" text="RESET" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </GridPane>
+   </left>
+   <center>
+      <Pane fx:id="board" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #000;" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle fx:id="computer" arcHeight="5.0" arcWidth="5.0" fill="#fffffff7" height="150.0" stroke="BLACK" strokeType="INSIDE" width="30.0" x="970.0" y="225.0" />
+            <Rectangle fx:id="player" arcHeight="5.0" arcWidth="5.0" fill="#fffffff7" height="150.0" stroke="BLACK" strokeType="INSIDE" width="30.0" y="200.0" />
+            <Line endX="500.0" startX="506.0" startY="750.0" stroke="WHITE" strokeWidth="4.0" />
+            <Circle fx:id="ball" centerX="450.0" centerY="300.0" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label alignment="CENTER" layoutX="367.0" prefHeight="46.0" prefWidth="137.0" text="Score" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelScore" alignment="CENTER" layoutX="509.0" prefHeight="46.0" prefWidth="66.0" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
